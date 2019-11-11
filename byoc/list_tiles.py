@@ -33,14 +33,11 @@ def main(client_id, client_secret, collection_id):
 
     tiles = get_tile_iterator(collection_id)
     
-    with open('ingested_tiles.txt', 'w') as f:
-        for tile in tiles:
-            if tile["status"] != "INGESTED":
-                continue
+    for tile in tiles:
+        if tile["status"] != "INGESTED":
+            continue
 
-            tile_id = tile['id']
-            print(tile_id)
-            f.write(tile_id + '\n')
+        print(tile['id'])
 
 
 if __name__ == "__main__":
