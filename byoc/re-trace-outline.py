@@ -55,20 +55,16 @@ def main(client_id, client_secret, collection_id, tile_ids):
         return geojson
 
     for tile_id in tile_ids:
-        response = oauth.get(
-            f"{byoc_service_base_url}/collections/{collection_id}/tiles/{tile_id}"
-        )
+        tile_url = f"{byoc_service_base_url}/collections/{collection_id}/tiles/{tile_id}"
+
+        response = oauth.get(tile_url)
         response.raise_for_status()
         tile = json.loads(response.text)["data"]
 
         cover_geometry = retrace(tile)
-
         tile["coverGeometry"] = cover_geometry
 
-        response = oauth.put(
-            f"{byoc_service_base_url}/collections/{collection_id}/tiles/{tile_id}",
-            json=tile,
-        )
+        response = oauth.put(tile_url, json=tile,)
         response.raise_for_status()
 
 
