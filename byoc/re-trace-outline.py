@@ -61,9 +61,9 @@ def main(client_id, client_secret, collection_id, tile_ids):
         response.raise_for_status()
         tile = json.loads(response.text)["data"]
 
-        cover_geometetry = retrace(tile)
+        cover_geometry = retrace(tile)
 
-        tile["coverGeometry"] = cover_geometetry
+        tile["coverGeometry"] = cover_geometry
 
         response = oauth.put(
             f"{byoc_service_base_url}/collections/{collection_id}/tiles/{tile_id}",
