@@ -1,0 +1,197 @@
+{
+	"type": "FeatureCollection",
+	"name": "Covid19-EO_RACE-PrioritySupermarket",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"id": 3,
+			"LAT": 37.97533,
+			"LON": 23.69534,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Lidl",
+			"BUFFER": 1000.0,
+			"CITY": "Athens",
+			"COUNTRY": "Greece"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[23.682840000000002, 37.962832999999996],
+					[23.70784, 37.962832999999996],
+					[23.70784, 37.987833],
+					[23.682840000000002, 37.987833],
+					[23.682840000000002, 37.962832999999996]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 6,
+			"LAT": 52.50678,
+			"LON": 13.41233,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Lidl",
+			"BUFFER": 1000.0,
+			"CITY": "Berlin",
+			"COUNTRY": "Germany"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[13.399835900000001, 52.494286499999994],
+					[13.4248359, 52.494286499999994],
+					[13.4248359, 52.5192865],
+					[13.399835900000001, 52.5192865],
+					[13.399835900000001, 52.494286499999994]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 9,
+			"LAT": 50.87927,
+			"LON": 4.34011,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Lidl",
+			"BUFFER": 1000.0,
+			"CITY": "Brussels",
+			"COUNTRY": "Belgium"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[4.3276109, 50.8667741],
+					[4.3526109, 50.8667741],
+					[4.3526109, 50.891774100000006],
+					[4.3276109, 50.891774100000006],
+					[4.3276109, 50.8667741]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 19,
+			"LAT": 51.64633,
+			"LON": 0.08206,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Sainsbury's",
+			"BUFFER": 1000.0,
+			"CITY": "London",
+			"COUNTRY": "United Kingdom"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[0.069565, 51.633838],
+					[0.094565, 51.633838],
+					[0.094565, 51.658838],
+					[0.069565, 51.658838],
+					[0.069565, 51.633838]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 33,
+			"LAT": 41.89767,
+			"LON": 12.5733,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Esselunga Prenestino",
+			"BUFFER": 1000.0,
+			"CITY": "Rome",
+			"COUNTRY": "Italy"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[12.560804463221928, 41.885177999999996],
+					[12.585804463221926, 41.885177999999996],
+					[12.585804463221926, 41.910178],
+					[12.560804463221928, 41.910178],
+					[12.560804463221928, 41.885177999999996]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 46,
+			"LAT": 52.1756,
+			"LON": 21.0139,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Carrefour Market",
+			"BUFFER": 1000.0,
+			"CITY": "Warsaw",
+			"COUNTRY": "Poland"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[21.0014, 52.1631],
+					[21.0264, 52.1631],
+					[21.0264, 52.188100000000006],
+					[21.0014, 52.188100000000006],
+					[21.0014, 52.1631]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 49,
+			"LAT": 48.18817,
+			"LON": 11.56795,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Lidl",
+			"BUFFER": 1000.0,
+			"CITY": "Munich",
+			"COUNTRY": "Germany"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[11.555453, 48.175672999999996],
+					[11.580452999999999, 48.175672999999996],
+					[11.580452999999999, 48.200673],
+					[11.555453, 48.200673],
+					[11.555453, 48.175672999999996]
+				]
+			]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"id": 50,
+			"LAT": 45.43371,
+			"LON": 9.12225,
+			"DOMAIN": "SUPERMARKET",
+			"NAME": "Esselunga",
+			"BUFFER": 1000.0,
+			"CITY": "Milan",
+			"COUNTRY": "Italy"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[9.108446125741317, 45.42119915951511],
+					[9.133446125741315, 45.42119915951511],
+					[9.133446125741315, 45.44619915951512],
+					[9.108446125741317, 45.44619915951512],
+					[9.108446125741317, 45.42119915951511]
+				]
+			]
+		}
+	}]
+}
