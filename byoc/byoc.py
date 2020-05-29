@@ -40,19 +40,19 @@ class ByocClient:
     location_cache = dict()
 
     def __init__(self, client_id=None, client_secret=None):
-        client_id = client_id if client_id is not None else os.environ["SH_CLIENT_ID"]
+        client_id = client_id if client_id is not None else os.environ.get("SH_CLIENT_ID")
 
         if client_id is None:
-            raise Error("client id missing")
+            raise Exception("client id missing")
 
         client_secret = (
             client_secret
             if client_secret is not None
-            else os.environ["SH_CLIENT_SECRET"]
+            else os.environ.get("SH_CLIENT_SECRET")
         )
 
         if client_secret is None:
-            raise Error("client secret missing")
+            raise Exception("client secret missing")
 
         client_args = {"client_id": client_id}
         shub_dir = os.path.join(os.path.expanduser("~"), ".sentinelhub")
