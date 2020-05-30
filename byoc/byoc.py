@@ -40,7 +40,9 @@ class ByocClient:
     location_cache = dict()
 
     def __init__(self, client_id=None, client_secret=None):
-        client_id = client_id if client_id is not None else os.environ.get("SH_CLIENT_ID")
+        client_id = (
+            client_id if client_id is not None else os.environ.get("SH_CLIENT_ID")
+        )
 
         if client_id is None:
             raise Exception("client id missing")
