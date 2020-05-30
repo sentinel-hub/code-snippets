@@ -54,7 +54,6 @@ class ByocClient:
         if client_secret is None:
             raise Exception("client secret missing")
 
-        client_args = {"client_id": client_id}
         shub_dir = os.path.join(os.path.expanduser("~"), ".sentinelhub")
         token_file = os.path.join(shub_dir, f"{client_id}.json")
 
