@@ -40,18 +40,14 @@ class ByocClient:
     location_cache = dict()
 
     def __init__(self, client_id=None, client_secret=None):
-        client_id = (
-            client_id if client_id is not None else os.environ.get("SH_CLIENT_ID")
-        )
+        if client_id is None:
+            client_id = os.environ.get("SH_CLIENT_ID")
 
         if client_id is None:
             raise Exception("client id missing")
 
-        client_secret = (
-            client_secret
-            if client_secret is not None
-            else os.environ.get("SH_CLIENT_SECRET")
-        )
+        if client_secret is None:
+            client_secret = os.environ.get("SH_CLIENT_SECRET")
 
         if client_secret is None:
             raise Exception("client secret missing")
@@ -76,7 +72,7 @@ class ByocClient:
 
         if (
             cached_token is None
-            or token["access_token"] != cached_token["access_token"]
+            or cached_token["access_token"] != token["access_token"]
         ):
             with open(token_file, "w") as fhandle:
                 json.dump(token, fhandle)
