@@ -18,7 +18,7 @@ mkdir -p $OUTPUT_DIR
 
 #collect all input files and group them into directories named after their CRS
 for T in $(find $INPUT_DIR -name '*.tif'); do
-  CRS=$(gdalinfo $T | grep "^    AUTHORITY" | sed 's/.*"\([0-9]\+\)".*/\1/')
+  CRS=$(gdalsrsinfo $T -o epsg |grep -i 'epsg:' | sed 's/.*\://')
   CRS_DIR=$OUTPUT_DIR/$CRS.crs
   mkdir -p $CRS_DIR
   cp $T $CRS_DIR/$(echo $T | tr '/' '_')
@@ -59,4 +59,3 @@ gdal_translate -of gtiff -co COMPRESS=LZW -r $INTERP -outsize 25% 25% small.tif 
 #done
 
 popd >/dev/null
-
