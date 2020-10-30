@@ -36,7 +36,7 @@ done
 
 # Check for bucket name
 if [ -z ${AWS_BUCKET+x} ];then
-  echo "Bucket name (-i) is unset";
+  echo "Bucket name (-b) is unset";
   exit 1
 fi
 
