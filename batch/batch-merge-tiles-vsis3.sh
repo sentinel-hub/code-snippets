@@ -3,6 +3,7 @@
 # Sentinel Hub batch/mass processing API requests directly from your s3 bucket using
 # vsis3 virtual file system for GDAL! (https://gdal.org/user/virtual_file_systems.html#vsis3-aws-s3-files)
 # Without downloading all the tiles to your local machine, it merges the GeoTIFFs into a single mosaic.
+# Requires bash shell with a working GDAL installation and AWS Command Line Interface.
 
 # Help function that displays basic instructions on the use of the tool
 print_usage() {

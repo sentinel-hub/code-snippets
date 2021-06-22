@@ -1,7 +1,8 @@
 #!/bin/bash
-#This is a helper scripts that merges a bunch of GeoTIFFs into a single large one."
-#It is intended as a tool for post-processing output tiles of your
-#Sentinel Hub batch/mass processing API requests.
+# This is a helper scripts that merges a bunch of GeoTIFFs into a single large one."
+# It is intended as a tool for post-processing output tiles of your
+# Sentinel Hub batch/mass processing API requests.
+# Requires bash shell with a working GDAL installation.
 
 if [ "$#" -ne 1 ]; then
   echo "You must provide input directory. Also, don't forget to set the output CRS in the script."
