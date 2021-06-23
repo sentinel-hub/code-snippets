@@ -20,6 +20,9 @@ mkdir -p $OUTPUT_DIR
 #collect all input files and group them into directories named after their CRS
 for T in $(find $INPUT_DIR -name '*.tif'); do
   CRS=$(gdalsrsinfo $T -o epsg |grep -i 'epsg:' | sed 's/.*\://')
+  #Older versions of gdalsrsinfo will return a warning or error with '-o epsg' option.
+  #In this case you MUST replace the above line with:
+  #CRS=$(gdalsrsinfo $T -o proj4 | shasum | awk '{print $1;}')   
   CRS_DIR=$OUTPUT_DIR/$CRS.crs
   mkdir -p $CRS_DIR
   cp $T $CRS_DIR/$(echo $T | tr '/' '_')
