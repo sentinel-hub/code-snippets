@@ -1,3 +1,7 @@
+# download_tpdi_deliveries.py
+# Downloads all raw files delivered to Sentinel Hub in an Order or Subscription
+
+
 from oauthlib.oauth2 import BackendApplicationClient
 from requests_oauthlib import OAuth2Session
 from pathlib import Path
@@ -57,8 +61,11 @@ def download_file(url: str, output_path: str, overwrite: bool=False) -> None:
     print(f"Downloaded file: {output_path}")
 
 
-def download_deliveries(base_url: str, deliveries: dict[str, Any], overwrite: bool=False) -> None:
+def download_deliveries(
+        request_id: str, base_url: str, deliveries: dict[str, Any], overwrite: bool=False
+) -> None:
     """Download all deliveries
+    :param request_id: The order id or the subscription id requested via TPDI API.
     :param base_url: Url pointing to deliveries.
     :param deliveries: Response of get subscription/order deliveries.
     :param (optional): Overwrite a file or not.
@@ -68,7 +75,7 @@ def download_deliveries(base_url: str, deliveries: dict[str, Any], overwrite: bo
         files_url = base_url + f"/{delivery_id}/files"
         files_req = oauth.get(files_url)
         for file in files_req.json():
-            download_file(files_url + f"/{file}", f"./{delivery_id}/{file}", overwrite)
+            download_file(files_url + f"/{file}", f"./{request_id}/{delivery_id}/{file}", overwrite)
 
 def download_subscription(subscription_id: str) -> None:
     """Download a subscription
@@ -81,7 +88,7 @@ def download_subscription(subscription_id: str) -> None:
     while 'nextToken' in deliveries['links']:
         response = oauth.get(f"{base_url}?viewtoken={deliveries['links']['nextToken']}")
         deliveries = response.json()
-        download_deliveries(base_url, deliveries)
+        download_deliveries(subscription_id, base_url, deliveries)
 
 
 def download_order(order_id: str) -> None:
@@ -95,7 +102,7 @@ def download_order(order_id: str) -> None:
     while 'nextToken' in deliveries['links']:
         response = oauth.get(f"{base_url}?viewtoken={deliveries['links']['nextToken']}")
         deliveries = response.json()
-        download_deliveries(base_url, deliveries)
+        download_deliveries(order_id, base_url, deliveries)
 
 
 download_subscription(subscription_id)
